@@ -6,6 +6,8 @@ Built with [Next.js](https://nextjs.org) (App Router + TypeScript + Tailwind) an
 
 **Live:** https://tekitera.vercel.app
 
+Speed Insights enabled via `@vercel/speed-insights` for Core Web Vitals and performance monitoring.
+
 ## Tech Stack
 
 - Next.js 16
