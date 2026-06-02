@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tekitera | Digital Product Studio",
   description: "Paris-based digital product studio crafting exceptional software, websites, and digital experiences for visionary companies.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
