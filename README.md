@@ -4,6 +4,8 @@ Official website for **Tekitera** — a Paris-based digital product studio craft
 
 Built with [Next.js](https://nextjs.org) (App Router + TypeScript + Tailwind) and deployed on Vercel.
 
+**Live:** https://tekitera.vercel.app
+
 ## Tech Stack
 
 - Next.js 16
@@ -23,30 +25,34 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-This site is continuously deployed to Vercel **from GitHub**.
+This site is deployed to Vercel and set up for continuous deployment **from GitHub**.
 
-A GitHub Actions workflow (`.github/workflows/deploy.yml`) is configured to deploy on pushes to `main` using the official Vercel action.
+### Production Deployment
 
-### Initial Setup (one-time)
+Successfully deployed using `vercel --prod`:
 
-1. **Import the repo to Vercel** (this creates the Vercel project and performs the first deploy):
-   - Go to https://vercel.com/new/import
-   - Select the `Karoffski/tekitera.com` GitHub repository.
-   - Vercel will auto-detect Next.js and deploy it. Note the production URL.
+- **Production URL:** https://tekitera.vercel.app
+- **Vercel Project:** karoffski-s-projects/tekitera
+- **Project ID:** prj_B8Y7qM0MCHdvTXzFeUjcWtpkajvb
+- **Org/Team ID:** team_ShnYgtfde8K3OjSuhjeQQS1n
 
-2. **Add GitHub Secrets** (for automated deploys from the workflow):
-   - In Vercel: Go to your project → Settings → General. Copy:
-     - `VERCEL_ORG_ID` (or Team ID)
-     - `VERCEL_PROJECT_ID`
-   - Create a Vercel access token: Vercel dashboard → Account → Settings → Tokens (create one with appropriate scope for the team/project).
-   - In GitHub: Go to the repo → Settings → Secrets and variables → Actions → New repository secret. Add three secrets:
-     - `VERCEL_TOKEN` = the token you created
-     - `VERCEL_ORG_ID` = the org/team ID
-     - `VERCEL_PROJECT_ID` = the project ID
+A GitHub Actions workflow (`.github/workflows/deploy.yml`) + `vercel.json` are configured for Git-triggered deploys.
 
-3. Push to `main` (or merge a PR). The workflow will deploy to production.
+### Initial Setup for GitHub Deploys (one-time)
 
-The workflow also runs on PRs (preview deployments if you adjust the action args).
+1. The Vercel project is already created (via CLI deploy).
+
+2. **Add GitHub Secrets** (for the workflow to deploy to this project):
+   - In Vercel dashboard: https://vercel.com/karoffski-s-projects/tekitera → Settings → General. Copy the IDs above.
+   - Create a Vercel access token (Account → Settings → Tokens).
+   - In GitHub repo → Settings → Secrets and variables → Actions, add:
+     - `VERCEL_TOKEN`
+     - `VERCEL_ORG_ID` = team_ShnYgtfde8K3OjSuhjeQQS1n
+     - `VERCEL_PROJECT_ID` = prj_B8Y7qM0MCHdvTXzFeUjcWtpkajvb
+
+3. (Recommended) Connect Git repo in Vercel dashboard (Settings → Git) for official previews on PRs etc. The custom workflow will handle prod deploys.
+
+4. Push to `main` to trigger deploy via GitHub Actions.
 
 ## Local Development
 
