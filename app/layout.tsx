@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
+import DeferredAnalytics from "./components/DeferredAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,8 +32,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#050505] text-white">
         {children}
-        <SpeedInsights />
-        <Analytics />
+        <DeferredAnalytics />
       </body>
     </html>
   );
