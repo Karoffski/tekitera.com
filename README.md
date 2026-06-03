@@ -8,6 +8,8 @@ Built with [Next.js](https://nextjs.org) (App Router + TypeScript + Tailwind) an
 
 Speed Insights enabled via `@vercel/speed-insights` for Core Web Vitals and performance monitoring.
 
+Vercel Analytics enabled via `@vercel/analytics` for page view and event tracking.
+
 ## Tech Stack
 
 - Next.js 16
@@ -15,6 +17,8 @@ Speed Insights enabled via `@vercel/speed-insights` for Core Web Vitals and perf
 - Tailwind CSS 4
 - Framer Motion
 - Lucide React icons
+- @vercel/speed-insights
+- @vercel/analytics
 
 ## Getting Started
 
