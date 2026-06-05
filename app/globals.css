@@ -127,6 +127,16 @@ body {
   color: var(--accent);
 }
 
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+}
+
 .stat-number {
   font-variant-numeric: tabular-nums;
 } 
